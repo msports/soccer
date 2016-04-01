@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Color theme for statusbar -->
+        <meta name="theme-color" content="#3F51B5">
+        <!-- Your app title -->
+        <title>Soccer Updates</title>
+        <!-- Path to Framework7 Library CSS, Material Theme -->
+        <link rel="stylesheet" href="css/framework7.material.min.css">
+        <!-- Path to Framework7 color related styles, Material Theme -->
+        <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+        <link rel="stylesheet" href="css/soccer.material.colors.css">
+        <!--Path to font-awesome icon css-->
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <!-- Path to your custom app styles-->
+        <link rel="stylesheet" href="css/soccer.css">
+    </head>
+    <body class="theme-indigo">
+        <div class="panel-overlay"></div>
+
+        <!-- Left panel, let it be with reveal effect -->
+        <div class="panel panel-left panel-cover">
+            <div class="list-block">
+                <!-- First group-->
+                <div class="list-group">
+                    <ul>
+                        <!--<li class="list-group-title">FAVORITES</li>-->
+                        <li>
+                            <a href="" class="item-content close-panel">
+                                <div class="item-media"><i class="fa fa-futbol-o panel-icon"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">Matches</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item-content close-panel" href="favorites.html">
+                                <div class="item-media"><i class="mi panel-icon">favorite</i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">Favorites</div>
+                                    <div class="item-after"><span class="badge favorites-badge">0</span></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item-content close-panel" href="spain.html">
+                                <div class="item-media"><i class="fa fa-calculator panel-icon"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">Laliga</div>
+                                    <div class="item-after"></div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item-content close-panel" href="league.html";>
+                                <div class="item-media"><i class="mi panel-icon">home</i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">Settings</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item-content close-panel" href="services.html";>
+                                <div class="item-media"><i class="mi panel-icon">settings</i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">Settings</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Views -->
+        <div class="views">
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+                <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+                <div class="pages navbar-fixed toolbar-fixed">
+                    <!-- Page, "data-page" contains page name -->
+                    <div data-page="index" class="page">
+                        <!-- Top Navbar. In Material theme it should be inside of the page-->
+                        <div class="navbar color-white">
+                            <div class="navbar-inner">
+                                <div class="left"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+                                <div class="left">M SPORT </div>
+
+                                <div class="right"><h5 style="border-right-width: 10px;margin-right:15px;">Premier League</h5></div>
+                            </div>
+                        </div>
+                        <!--Tab bar-->
+                        <div class="toolbar tabbar color-lightblue">
+                            <div class="toolbar-inner">
+                                <a href="#tab1" class="active tab-link matches">MATCHES</a>
+                                <a href="#tab2" class="tab-link table">TABLE</a>
+                                <a href="#tab3" class="tab-link table">HANDICAP</a>
+
+                            </div>
+                        </div>
+                        <div class="tabs-swipeable-wrap">
+                            <div class="tabs">
+                                <div id="tab1" class="page-content tab active pull-to-refresh-content">
+                                    <!--Pull to refresh pre-loader-->
+                                    <div class="pull-to-refresh-layer">
+                                        <div class="preloader"></div>
+                                        <div class="pull-to-refresh-arrow"></div>
+                                    </div>
+                                    <!--Ajax pre-loader-->
+                                    <div class="preloader"></div>
+                                    <!--Fixtures list-->
+                                    <div class="list-block" id="fixtures-listing" style="margin-top: 0; font-size: 14px;">
+                                    </div>
+                                </div>
+                                <div id="tab2" class="page-content tab pull-to-refresh-content">
+                                    <!--Pull to refresh pre-loader-->
+                                    <div class="pull-to-refresh-layer">
+                                        <div class="preloader"></div>
+                                        <div class="pull-to-refresh-arrow"></div>
+                                    </div>
+                                    <!--Ajax pre-loader-->
+                                    <div class="preloader"></div>
+                                    <div class="content-block" id="standing-table">
+                                    </div>
+                                </div>
+                                <div id="tab3" class="page-content tab">
+                                    <!--Pull to refresh pre-loader>
+                                    <div class="pull-to-refresh-layer">
+                                        <div class="preloader"></div>
+                                        <!--div class="pull-to-refresh-arrow"></div>
+                                    </div>
+                                    <!--Ajax pre-loader-->
+                                    <!--div class="preloader"></div-->
+                                        <div class="card">
+                <div class="card-header">HANDICAP CALCULATOR</div>
+                 <div class="card-content">
+                   <div class="card-content-inner">
+                     <div>
+                     	<div id="ds-language">
+                        <span id="ds-l-eng" onclick="changeLang('eng')" title="English">
+                          <img src="img/flag_eng.jpg" alt="" id="ds-l-eng" onclick="changeLang('eng')" title="English" style="height:22px; padding-right: 15px;"/>
+                        </span>
+                        <span id="ds-l-eng" onclick="changeLang('ger')" title="Myanmar">
+                          <img src="img/flag_mm.jpg" alt="" id="ds-l-ger" onclick="changeLang('ger')" title="English" style="height:22px; padding-left: 2px;"/>
+                        </span>
+                     		<div id="ds-l-eng" onclick="changeLang('eng')" title="English"></div>
+                     		<div id="ds-l-ger" onclick="changeLang('ger')" title="German"></div>
+                     		<div id="ds-l-pol" onclick="changeLang('pol')" title="Polish"></div>
+                     		<div id="ds-l-rus" onclick="changeLang('rus')" title="Russian"></div>
+                     		<div id="ds-l-rom" onclick="changeLang('rom')" title="Romanian"></div>
+                     	</div>
+                     	<div id="ds-calculator" class="list-block">
+                            <div class="content-block-title" id="cell_your_selection">Your Selection</div>
+                            <div class="row">
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_home" id="bet_on_home_l">
+                                    <input type="radio" name="bet_on_selection" value="home" onchange="changeLabel('bet_on_selection_home')" id="bet_on_home" checked="checked">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                     <span class="item-inner item-title">Home</span>
+                                  </label>
+                                </div>
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_away" id="bet_on_away_l">
+                                    <input type="radio" name="bet_on_selection" value="away" onchange="changeLabel('bet_on_selection_away')" id="bet_on_away">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                      <span class="item-inner item-title">Away </span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_over" id="bet_on_over_l">
+                                    <input type="radio" name="bet_on_selection" value="over" onchange="changeLabel('bet_on_selection_over')" id="bet_on_over">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                     <span class="item-inner item-title">Over</span>
+                                  </label>
+                                </div>
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_under" id="bet_on_under_l">
+                                    <input type="radio" name="bet_on_selection" value="under" onchange="changeLabel('bet_on_selection_under')" id="bet_on_under">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                      <span class="item-inner item-title">Under</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                        </div><br>
+                        <table id="ds-form-table" class="content-block-title"></div>
+                         <div class="list-block inputs-list">
+                           <ul name="calculator">
+                              <li>
+                                <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label" id="cell_odds_format">Odd Format</div>
+                                  <div class="item-input id="cell_odds_format"">
+                                    <select name="select_format" onchange="showResult(this)" id="select_odds_format">
+                                      <option value="de" id="de_op">Decimal Odds</option>
+                                      <option value="ma" id="ma_op">Malay Odds</option>
+                                      <option value="ho" id="ho_op">Hong Kong Odds</option>
+                                      <option value="in" id="in_op">Indo Odds</option>
+                                      <option value="fr" id="fr_op">Fractional Odds</option>
+                                      <option value="am" id="am_op">American Odds</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              </li>
+                     					<li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                     						    <div  class="item-title label" id="cell_odds">Home Team Odds</div>
+                                    <div id="odds_error"></div>
+                                    <input type="text" id="odd_input" value="1.91">
+                                    </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div class="item-title label" id="cell_handicap">Home AH</div>
+                                    <div class="item-input" id="selection_cell">
+                                      <select id="select_handicap">
+                                          <option value="-4.00">-4.00</option>
+                                          option value="-3.75">-3.75 (-3.5, -4.0)</option>
+                                          <option value="-3.50">-3.50</option>
+                                          <option value="-3.25">-3.25 (-3.0, -3.5)</option>
+                                          <option value="-3.00">-3.00</option>
+                                          <option value="-2.75">-2.75 (-2.5, -3.0)</option>
+                                          <option value="-2.50">-2.50</option>
+                                          <option value="-2.25">-2.25 (-2.0, -2.5)</option>
+                                          <option value="-2.00">-2.00</option>
+                                          <option value="-1.75">-1.75 (-1.5, -2.0)</option>
+                                          <option value="-1.50">-1.50</option>
+                                          <option value="-1.25">-1.25 (-1.0, -1.5)</option>
+                                          <option value="-1.00">-1.00</option>
+                                          <option value="-0.75">-0.75 (-0.5, -1.0)</option>
+                                          <option value="-0.50">-0.50</option>
+                                          <option value="-0.25">-0.25 (0.0, -0.5)</option>
+                                          <option value="0.00" selected="selected">0.0 (Level)</option>
+                                          <option value="0.25">+0.25 (+0.0, +0.5)</option>
+                                          <option value="0.50">+0.50</option>
+                                          <option value="0.75">+0.75 (+0.5, +1.0)</option>
+                                          <option value="1.00">+1.00</option>
+                                          <option value="1.25">+1.25 (+1.0, +1.5)</option>
+                                          <option value="1.50">+1.50</option>
+                                          <option value="1.75">+1.75 (+1.5, +2.0)</option>
+                                          <option value="2.00">+2.00</option>
+                                          <option value="2.25">+2.25 (+2.0, +2.5)</option>
+                                          <option value="2.50">+2.50</option>
+                                          <option value="2.75">+2.75 (+2.5, +3.0)</option>
+                                          <option value="3.00">+3.00</option>
+                                          <option value="3.25">+3.25 (+3.0, +3.5)</option>
+                                          <option value="3.50">+3.50</option>
+                                          <option value="3.75">+3.75 (+3.5, +4.0)</option>
+                                          <option value="4.00">+4.00</option>
+                                        </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div id="stake_error"></div>
+                                    <div class="item-title label" id="stake_cell">Stake</div>
+                                    <div class="item-input">
+                                      <input type="text" name="stake" id="stake" value="100">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                            <div class="content-block-title" id="calculation_cell">Calculation Options</div>
+                               <div class="row">
+                                 <div>
+                                   <label class="label-radio item-content" for="final_score_check" id="final_score_check_l">
+                                     <input type="radio" name="calculation" checked="checked" onchange="changeLabel('score')" id="final_score_check">
+                                      <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                      <span class="item-inner item-title">Score</span>
+                                   </label>
+                                 </div>
+                                 <div>
+                                   <label class="label-radio item-content" for="final_all_check" id="final_all_check_l">
+                                     <input type="radio" name="calculation" onchange="changeLabel('all')" id="final_all_check">
+                                      <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                       <span class="item-inner item-title">All Result</span>
+                                   </label>
+                                 </div>
+                               </div>
+                             </div>
+                             <div>
+                               <div class="list-block inset inputs-list" >
+                               <div class="row" id="final_score_row">
+                                 <h5 id="specific_cell">SCORE</h5>
+                                 <div class="item-content">
+                                   <div class="item-inner" >
+                                     <div class="item-title label" id="score-home">Home</div>
+                                     <div class="item-input ds-select small">
+                                       <select id="select_home">
+                                       <option selected="selected">0</option>
+                                       <option>1</option>
+                                       <option>2</option>
+                                       <option>3</option>
+                                       <option>4</option>
+                                       <option>5</option>
+                                       <option>6</option>
+                                       <option>7</option>
+                                       <option>8</option>
+                                       <option>9</option>
+                                     </select>
+                                   </div>
+                                 </div>
+                               </div>
+                               <div class="item-content">
+                                 <div class="item-inner">
+                                   <div class="item-title label" id="score-away">away</div>
+                                   <div class="item-input ds-select small">
+                                     <select id="select_away">
+                                       <option selected="selected">0</option>
+                                       <option>1</option>
+                                       <option>2</option>
+                                       <option>3</option>
+                                       <option>4</option>
+                                       <option>5</option>
+                                       <option>6</option>
+                                       <option>7</option>
+                                       <option>8</option>
+                                       <option>9</option>
+                                     </select>
+                                   </div>
+                                 </div>
+                               </div>
+
+                     			</table>
+                          <p id="buttons" class="buttons-row">
+                             <a type="button" onclick="calculate()" id="btn_calculate" class="button button-fill button-raised">Calculate</a>
+                             <a type="button" onclick="reset_form()" id="btn_reset" class="button button-raised">RESET</a>
+                          </p>
+                          <p>
+
+
+                          </p>
+                             <div class="content-block-inner">
+
+
+                            <div class="clear"></div>
+                            <div class="item-divider"></div>
+                     			<div id="result"></div>
+
+                          </div>
+
+                     	</div>
+                     </div>
+                     <div class="clear"></div>
+                   </div>
+                 </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Search favorite teams popup-->
+        <div class="popup">
+            <div class="view">
+                <div class="pages">
+                    <div class="page navbar-fixed">
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <div class="left"><a href="" class="link icon-only close-popup"><i class="icon icon-back"></i></a></div>
+                                <form class="searchbar">
+                                    <div class="searchbar-input">
+                                        <input type="search" placeholder="Search" class="fav-search"><a href="#" class="searchbar-clear"></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="page-content">
+                            <div class="list-block media-list list-block-search">
+                                <!--<ul class="search-results"></ul>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script id="fixtures-template" type="text/template">
+            {{#each this}}
+            <div class="list-group">
+            <ul>
+            <li class="list-group-title">Match day {{@key}}</li>
+            {{#each this}}
+            <li class="item-content fixture-list ripple" fixture-link="{{_links.self.href}}">
+            <div class="item-inner">
+            <div class="item-title">
+            <table class="fixture-listing-table">
+            <tr>
+            <td rowspan="2" class="fixture-date">{{js "myApp.shorttenStatus(this.status)"}} {{#js_compare "myApp.shorttenStatus(this.status) === ''"}} {{js "localTime(this.date)"}} {{else}} {{/js_compare}}<br/>{{js "dateFormat(this.date)"}}</td>
+            <td class="fixture-team-logo">{{#js_compare "teamLogo(this.homeTeamName) !== undefined"}}<img src="{{teamLogo homeTeamName}}" class="club-logo"/>{{else}}<i class="fa fa-shield tm-missing-icon"></i>{{/js_compare}}</td>
+            <td class="fixture-team-name"><span>{{js "this.homeTeamName.replace(/AFC|FC/g,'')"}}</span></td>
+            <td class="fixture-team-score">{{js "cleanResult(this.result.goalsHomeTeam)"}}</td>
+            </tr>
+            <tr>
+            <td class="fixture-team-logo">{{#js_compare "teamLogo(this.awayTeamName) !== undefined"}}<img src="{{teamLogo awayTeamName}}" class="club-logo"/>{{else}}<i class="fa fa-shield tm-missing-icon"></i>{{/js_compare}}</td>
+            <td class="fixture-team-name"><span>{{js "this.awayTeamName.replace(/AFC|FC/g,'')"}}</span></td>
+            <td class="fixture-team-score">{{js "cleanResult(this.result.goalsAwayTeam)"}}</td>
+            </tr>
+            </table>
+            </div>
+            </div>
+            </li>
+            {{/each}}
+            </ul>
+            </div>
+            </ul>
+            </div>
+            {{/each}}
+        </script>
+        <script id="standings-template" type="text/template">
+            <table class="league-table">
+            <tr><th colspan="4" class="club-title">Team</th><th>MP</th><th>GF</th><th>GA</th><th>Pts</th></tr>
+            {{#each standing}}
+            <tr>
+            <td class="td-rank">{{position}}</td>
+            <td class="td-club-logo"><img src="{{teamLogo teamName}}" class="club-logo" height="25"/></td>
+            <td class="td-club-title">{{js "this.teamName.replace(/AFC|FC/g,'')"}}</td>
+            <td class="td-club-title"></td>
+            <td class="td-score">{{playedGames}}</td>
+            <td class="td-score">{{goals}}</td>
+            <td class="td-score">{{goalsAgainst}}</td>
+            <td class="td-score">{{points}}</td>
+            </tr>
+            {{/each}}
+            </table>
+        </script>
+        <script id="fixture-vrt-detail-template" type="text/template">
+            <div class="pages navbar-fixed">
+            <div data-page="vrt-match-details" class="page">
+            <div class="navbar color-mint">
+            <div class="navbar-inner">
+            <div class="left"><a href="index.html" class="link back icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center"></div>
+            </div>
+            </div>
+            <div class="page-content">
+            <div class="content-block">
+            <div class="preloader vtr-preloader"></div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </script>
+        <script id="fixture-detail-template" type="text/template">
+            <div class="pages navbar-fixed">
+            <div data-page="match-details" class="page">
+                <div class="navbar color-mint big-subnavbar-container">
+                    <div class="navbar-inner">
+                        <div class="left"><a href="index.html" class="link back icon-only"><i class="icon icon-back"></i></a></div>
+                        <div class="center">{{fixture.homeTeamName}} vs {{fixture.awayTeamName}} </div>
+                    </div>
+                    <div class="big-subnavbar color-mint">
+                        <table>
+                            <tr>
+                                <td class="match-tm-logo">{{#js_compare "teamLogo(this.fixture.homeTeamName) !== undefined"}}<img src="{{teamLogo fixture.homeTeamName}}" height="48"/>{{else}}<i class="fa fa-shield tm-missing-icon-large"></i>{{/js_compare}}</td>
+                                <td class="match-sc-home">{{fixture.result.goalsHomeTeam}}</td>
+                                <td class="match-sc-dash">{{fixture.matchTime}}</td>
+                                <td class="match-sc-away">{{fixture.result.goalsAwayTeam}}</td>
+                                <td class="match-tm-logo">{{#js_compare "teamLogo(this.fixture.awayTeamName) !== undefined"}}<img src="{{teamLogo fixture.awayTeamName}}" height="48"/>{{else}}<i class="fa fa-shield tm-missing-icon-large"></i>{{/js_compare}}</td>
+                            </tr>
+                            <tr>
+                                <td class="match-tm-name">{{fixture.homeTeamName}}</td>
+                                <td class="match-status" colspan="3">{{fixture.status}}</td>
+                                <td class="match-tm-name">{{fixture.awayTeamName}}</td>
+                            </tr>
+                        </table>
+                        <div class="toolbar tabbar color-mint" style="top: 0">
+                            <div class="toolbar-inner">
+                                <a href="#stats" class="active tab-link stats">STATS</a>
+                                <a href="#head2head" class="tab-link">HEAD TO HEAD</a>
+                                <span class="tab-link-highlight" style="width: 50%; transform: translate3d(0%, 0px, 0px);"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-content" style="padding-top: 125px;">
+                    <div class="tabs">
+                        <div id="stats" class="tab active">
+                            <div class="content-block">
+
+                            </div>
+                        </div>
+                        <div id="head2head" class="tab" style="background: #f4f4f4;">
+                            <div class="page-content">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-content-inner">
+                                            <div class="row no-gutter head-times">
+                                                <div class="col-25"><div class="head-stat">{{head2head.homeTeamWins}}</div><div class="stat-legend color-gray">Wins</div></div>
+                                                <div class="col-25"><div class="head-stat">{{head2head.draws}}</div><div class="stat-legend color-gray">Draws</div></div>
+                                                <div class="col-25"><div class="head-stat">{{head2head.count}}</div><div class="stat-legend color-gray">Games</div></div>
+                                                <div class="col-25"><div class="head-stat">{{head2head.awayTeamWins}}</div><div class="stat-legend color-gray">Wins</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-block" style="margin-top: 15px; margin-left: 8px; margin-right: 8px;">
+                                    <table class="head2head">
+                                        {{#each head2head.fixtures}}
+                                        <tr class="item-divider" style="line-height: 0"><td colspan="5">{{@key}}</td></tr>
+                                        {{#each this}}
+                                        <tr>
+                                            <td class="head-team" align="right" style="padding-left: 10px;">{{js "this.homeTeamName.replace(/AFC|FC/g,'')"}}</td>
+                                            <td class="head-logo">{{#js_compare "teamLogo(this.homeTeamName) !== undefined"}}<img src="{{teamLogo homeTeamName}}" height="25"/>{{else}}<i class="fa fa-shield h2h-missing-icon"></i>{{/js_compare}}</td>
+                                            <td class="head-score">{{result.goalsHomeTeam}} - {{result.goalsAwayTeam}}<br/><span class="head-date color-gray">{{js "getDateStr(this.date)"}}</span></td>
+                                            <td class="head-logo">{{#js_compare "teamLogo(this.awayTeamName) !== undefined"}}<img src="{{teamLogo awayTeamName}}" height="25"/>{{else}}<i class="fa fa-shield h2h-missing-icon"></i>{{/js_compare}}</td>
+                                            <td class="head-team" style="padding-right: 10px;">{{js "this.awayTeamName.replace(/AFC|FC/g,'')"}}</td>
+                                        </tr>
+                                        {{/each}}
+                                        {{/each}}
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </script>
+        <script id="favorites-listing-template" type="text/template">
+            <ul>
+            {{#each this}}
+            <li class="swipeout">
+            <div class="swipeout-content item-content" id="favorite-list" teamcode="{{code}}" teamname="{{name}}" team-href="{{href}}">
+            <div class="item-media"><img src="{{teamLogo name}}" height="30px" /></i></div>
+            <div class="item-inner">
+            <div class="item-title">{{name}}</div>
+            </div>
+            </div>
+            <div class="swipeout-actions-right">
+            <a href="#" class="swipeout-delete delete-favorite"><i class="mi">delete</i></a>
+            </div>
+            </li>
+            {{/each}}
+            </ul>
+        </script>
+        <script id="teams-listing-template" type="text/template">
+            <ul>
+            {{#each teams}}
+            <li>
+            <label class="label-checkbox item-content">
+            <input type="checkbox" name="teams-checkbox" value="{{code}}" teamname="{{name}}" tem-href="{{_links.self.href}}" />
+            <div class="item-media"><img src="{{teamLogo name}}" height="30px" /></div>
+            <div class="item-inner">
+            <div class="item-title">{{name}}</div>
+            </div>
+            <div class="item-after"><i class="icon-form-checkbox"></i></div>
+            </label>
+            </li>
+            {{/each}}
+            </ul>
+        </script>
+        <script id="team-template" type="text/template">
+            <div class="pages navbar-fixed">
+            <div data-page="team-detail" class="page">
+            <div class="navbar big-subnavbar-container" style="background-color: {{color}}; color: #fff;">
+            <div class="navbar-inner">
+            <div class="left"><a href="" class="link back icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center">Team</div>
+            </div>
+            <div class="big-subnavbar" style="background-color: {{color}}; color: #fff;">
+            <table>
+            <tr>
+            <td class="tm-logo"><img src="{{teamLogo name}}" height="48"/></td>
+            <td class="tm-name" id="team-href" team-href={{href}}>{{name}}</td>
+            </tr>
+            </table>
+
+            <div class="toolbar tabbar" style="top: 0; background-color: {{color}}; color: #fff;">
+            <div class="toolbar-inner">
+            <a href="#fixtures" class="active tab-link fixtures">FIXTURES</a>
+            <a href="#players" class="tab-link players">PLAYERS</a>
+            <span class="tab-link-highlight" style="width: 50%; transform: translate3d(0%, 0px, 0px);"></span>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="page-content" style="padding-top: 155px;">
+            <div class="tabs">
+            <div id="fixtures" class="tab active">
+            <div class="preloader vtr-preloader"></div>
+            <div class="list-block" id="tm-fixture" style="margin-top: 10px; font-size: 14px;">
+
+            </div>
+            </div>
+            <div id="players" class="tab bg-lightgray">
+            <div class="preloader vtr-preloader"></div>
+            <div class="page-content" id="player-list" style="padding-top: 20px; font-size: 14px;">
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </script>
+        <script id="player-template" type="text/template">
+            {{#each this}}
+            <div class="card">
+            <div class="card-header color-gray">{{@key}}</div>
+            <div class="card-content">
+            <div class="card-content-inner">
+            <div class="list-block">
+            <ul>
+            {{#each this}}
+            <li class="item-content">
+            <div class="item-media" style="box-sizing: content-box;"><div class="small-player-pic">{{#js_compare "playerImg(this.name) !== undefined"}}<img src='{{js "playerImg(this.name)"}}' />{{else}}<i class="mi player">person</i>{{/js_compare}}</div></div>
+            <div class="item-inner">
+            <div class="item-title">{{name}}</div>
+            </div>
+            </li>
+            {{/each}}
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+            {{/each}}
+        </script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <!-- Path to Framework7 Library JS-->
+        <script type="text/javascript" src="js/framework7.min.js"></script>
+        <script type="text/javascript" src="js/underscore.min.js"></script>
+        <!-- Path to your app js-->
+        <script type="text/javascript" src="js/soccer.js"></script>
+        <script type="text/javascript" src="js/msport.js"></script>
+        <script type="text/javascript" src="js/framework7.feed.min.js"></script>
+
+    </body>
+</html>

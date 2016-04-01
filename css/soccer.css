@@ -1,0 +1,435 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/MaterialIcons-Regular.woff') format('woff');
+}
+
+table {
+    -webkit-user-select: none;
+}
+
+.page-content {
+    padding-top: 56px;
+}
+
+.mi {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+.panel-icon {
+    color: rgba(0,0,0,0.54) !important;
+}
+.panel .badge {
+    background-color: #fc6e51;
+}
+
+.league-table {
+    width: 100%;
+    border-collapse: collapse;
+    -webkit-user-select: none;
+}
+.league-table th {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    color: rgba(0,0,0,.54);
+    font-weight: normal;
+}
+.league-table .club-title {
+    text-align: left;
+}
+
+.league-table .td-club-title {
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /*min-width: 50px;*/
+}
+
+.league-table .club-logo {
+    /*height: 50%;*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.league-table td {
+    vertical-align: central;
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+.league-table .td-score {
+    text-align: center;
+}
+
+.league-table .td-rank {
+    width: 20px;
+    text-align: center;
+}
+
+.td-club-logo {
+    width: 40px;
+}
+
+.club-td-logo {
+    min-width: 35px;
+}
+.fixture-list {
+    overflow: hidden;
+}
+
+.fixture-listing-table {
+    width: 100% !important;
+    border-collapse: collapse;
+    -webkit-user-select: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /*min-height: 100px;*/
+}
+
+.fixture-listing-table td {
+    padding: 4px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.fixture-listing-table span {
+    /*padding: 4px;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 99%;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 35px !important;
+}
+
+.item-title {
+    width: 100%;
+    font-size: 14px;
+}
+
+.fixture-date {
+    text-align: center;
+    width: 25% !important;
+    font-size: 12px;
+}
+
+.fixture-date:before{
+    content: '';
+    position: absolute;
+    left: auto;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(0,0,0,.12);
+    display: block;
+    z-index: 15;
+    /*    -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;*/
+}
+
+.fixture-team-logo {
+    width: 40px;
+    text-align: center;
+}
+
+.fixture-team-logo img {
+    /*width: 100%;*/
+    height: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fixture-team-name {
+    max-width: 55%;
+}
+
+.fixture-team-score {
+    width: 7%;
+    text-align: center;
+}
+
+.panel {
+    background: #fff;
+}
+.panel ul {
+    border-bottom: 0px;
+    /*border-top: 1px solid #8ba9c4;*/
+}
+.panel .list-block .item-content {
+    /*  background: #7a9dbb;*/
+    /*border-bottom: 1px solid #8ba9c4;*/
+}
+.panel .list-block .item-link:active {
+    background-color: #5884aa;
+}
+.panel .list-block .item-link .item-inner {
+    background: none;
+    border-bottom: 0px;
+}
+.panel .list-block .item-title {
+    color: #fafafa;
+    color: #000;
+}
+
+.big-subnavbar {
+    width: 100%;
+    display: block;
+}
+
+.big-subnavbar table, .big-subnavbar table {
+    width: 100%;
+    padding: 16px 16px 0 16px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.big-subnavbar table {
+    width: 100%;
+    padding: 5px 16px 0 16px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.big-subnavbar table td {
+    text-align: center;
+}
+
+.big-subnavbar .match-tm-logo{
+    height: 48px;
+    width: 112px;
+    max-width: 112px;
+}
+ .big-subnavbar .tm-logo {
+    height: 48px;
+    width: 112px;
+    max-width: 112px;
+}
+
+.big-subnavbar .match-tm-logo img, .big-subnavbar .match-tm-logo img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.big-subnavbar .match-tm-logo img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.big-subnavbar .tm-name {
+    font-size: 14px;
+    vertical-align: super;
+    padding-top: 10px !important;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.big-subnavbar .toolbar {
+    height: 40px;
+}
+
+.big-subnavbar .toolbar a{
+    font-size: 12px !important;
+}
+/*.big-subnavbar .match-tm-results {
+text-align: center;
+}*/
+.big-subnavbar .match-tm-name {
+    font-size: 12px;
+    line-height: 20px;
+    height: 42px;
+    vertical-align: top;
+}
+.big-subnavbar .match-status {
+    font-size: 12px;
+    height: 42px;
+    vertical-align: top;
+}
+.big-subnavbar .match-sc-home {
+    /*color: rgba(0,0,0,0.87);*/
+    font-size: 34px;
+    text-align: left;
+}
+
+.big-subnavbar .match-sc-dash {
+    font-size: 34px;
+}
+.big-subnavbar .match-sc-away {
+    font-size: 34px;
+    text-align: right;
+}
+
+.big-subnavbar {
+    margin-top: 56px;
+}
+
+.big-subnavbar .tm-logo {
+    width: 50px;
+}
+
+.big-subnavbar td {
+    padding: 5px;
+}
+
+.big-subnavbar-container {
+    height: auto !important;
+}
+
+.big-subnavbar-container .navbar-inner {
+    height: auto;
+}
+
+.vtr-preloader {
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -21px;
+    margin-top: -21px;
+    z-index: 10;
+}
+
+.color-mint {
+    background-color: #40c9c5 !important;
+    background-color: #38aea9 !important;
+    color: #d9ffff !important;
+}
+.color-lightblue {
+    background-color: #4d9cd0;
+    color: #dbffff;
+}
+.color-pink {
+    background-color: #e91e63 !important;
+}
+
+.head-times {
+    text-align: center;
+}
+.head-stat {
+    font-size: 24px !important;
+    line-height: 24px;
+}
+.stat-legend {
+    font-size: 12px;
+}
+
+.head2head {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.head2head td {
+    padding:  15px 4px;
+    vertical-align: middle;
+}
+.head2head tr {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.head2head .head-team {
+    min-width: 50px !important;
+    font-size: 12px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.head2head .head-logo {
+    width: 30px;
+}
+.head2head .head-logo img {
+    margin: 0 auto;
+    display: block;
+}
+.head2head .head-score {
+    width: 54px !important;
+    overflow: hidden;
+    font-size: 14px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    /*font-weight: bold;*/
+    white-space: nowrap;
+}
+.head2head .head-date {
+    font-size: 10px;
+}
+/*.head2head td {
+    border-bottom: 1px solid rgba(0,0,0,.057);;
+}*/
+
+.tm-missing-icon {
+    font-size: 24px;
+    text-align: center;
+    color: #bbb;
+}
+.tm-missing-icon-large {
+    font-size: 48px;
+    text-align: center;
+    color: #bbb;
+}
+.h2h-missing-icon {
+    font-size: 25px;
+    text-align: center;
+    color: #bbb;
+}
+
+.bg-lightgray {
+ background-color:  #eee;
+}
+
+#players .card-header {
+    font-size: 14px;
+}
+
+.mi.player {
+    font-size: 66px;
+    /*margin-top: 10px;*/
+    color: rgba(0,0,0, .26);
+    margin-left: -8px;
+}
+
+.small-player-pic {
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 26px;
+    border: 1px solid rgba(0,0,0, .26);
+    text-align: center;
+}
+
+.small-player-pic img {
+    display: block;
+    margin: auto;
+    height: 50px;
+}

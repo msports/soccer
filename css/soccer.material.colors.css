@@ -1,0 +1,316 @@
+.theme-soccerblue .button:not(.button-fill) {
+  color: #4d9cd0;
+}
+.theme-soccerblue .navbar .button:not(.button-fill),
+.theme-soccerblue.navbar .button:not(.button-fill),
+.theme-soccerblue .toolbar .button:not(.button-fill),
+.theme-soccerblue.toolbar .button:not(.button-fill),
+.theme-soccerblue .subnavbar .button:not(.button-fill),
+.theme-soccerblue.subnavbar .button:not(.button-fill) {
+  color: #dbffff;
+}
+.button.color-soccerblue:not(.button-fill),
+.color-soccerblue.buttons-row .button:not(.button-fill) {
+  color: #4d9cd0 !important;
+}
+.theme-soccerblue .button.button-fill {
+  background: #4d9cd0;
+  color: #dbffff;
+}
+html:not(.watch-active-state) .theme-soccerblue .button.button-fill:active,
+.theme-soccerblue .button.button-fill.active-state {
+  background: #303F9F;
+}
+.button.button-fill.bg-soccerblue,
+.button.button-fill.color-soccerblue {
+  background: #4d9cd0 !important;
+  color: #dbffff;
+}
+html:not(.watch-active-state) .button.button-fill.bg-soccerblue:active,
+html:not(.watch-active-state) .button.button-fill.color-soccerblue:active,
+.button.button-fill.bg-soccerblue.active-state,
+.button.button-fill.color-soccerblue.active-state {
+  background: #303F9F !important;
+}
+.progressbar.color-soccerblue,
+.progressbar.theme-soccerblue,
+.theme-soccerblue .progressbar,
+.progressbar.bg-soccerblue {
+  background-color: rgba(63, 81, 181, 0.5);
+}
+.progressbar.color-soccerblue span,
+.progressbar.theme-soccerblue span,
+.theme-soccerblue .progressbar span,
+.progressbar.bg-soccerblue span {
+  background-color: #4d9cd0;
+}
+.progressbar-infinite.color-soccerblue,
+.progressbar-infinite.theme-soccerblue,
+.theme-soccerblue .progressbar-infinite,
+.progressbar-infinite.bg-soccerblue {
+  background-color: rgba(63, 81, 181, 0.5);
+}
+.progressbar-infinite.color-soccerblue:after,
+.progressbar-infinite.theme-soccerblue:after,
+.theme-soccerblue .progressbar-infinite:after,
+.progressbar-infinite.bg-soccerblue:after,
+.progressbar-infinite.color-soccerblue:before,
+.progressbar-infinite.theme-soccerblue:before,
+.theme-soccerblue .progressbar-infinite:before,
+.progressbar-infinite.bg-soccerblue:before {
+  background-color: #4d9cd0;
+}
+.color-soccerblue i.icon,
+i.icon.color-soccerblue {
+  color: #4d9cd0;
+}
+i.icon-next.color-soccerblue,
+i.icon-next.theme-soccerblue {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20fill%3D'%233f51b5'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M10%206L8.59%207.41%2013.17%2012l-4.58%204.59L10%2018l6-6z'%2F%3E%3Cpath%20d%3D'M0%200h24v24H0z'%20fill%3D'none'%2F%3E%3C%2Fsvg%3E");
+}
+i.icon-prev.color-soccerblue,
+i.icon-prev.theme-soccerblue {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20fill%3D'%233f51b5'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M15.41%207.41L14%206l-6%206%206%206%201.41-1.41L10.83%2012z'%2F%3E%3Cpath%20d%3D'M0%200h24v24H0z'%20fill%3D'none'%2F%3E%3C%2Fsvg%3E");
+}
+i.icon-back.color-soccerblue,
+i.icon-back.theme-soccerblue {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M20%2011H7.83l5.59-5.59L12%204l-8%208%208%208%201.41-1.41L7.83%2013H20v-2z'%20fill%3D'%233f51b5'%2F%3E%3C%2Fsvg%3E");
+}
+i.icon-forward.color-soccerblue,
+i.icon-forward.theme-soccerblue {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M12%204l-1.41%201.41L16.17%2011H4v2h12.17l-5.58%205.59L12%2020l8-8z'%20fill%3D'%233f51b5'%2F%3E%3C%2Fsvg%3E");
+}
+i.icon-bars.color-soccerblue,
+i.icon-bars.theme-soccerblue {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M3%2018h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'%20fill%3D'%233f51b5'%2F%3E%3C%2Fsvg%3E");
+}
+.preloader.color-soccerblue svg circle,
+.preloader.preloader-soccerblue svg circle {
+  stroke: #4d9cd0;
+}
+.preloader.color-soccerblue .preloader-inner-gap,
+.preloader.preloader-soccerblue .preloader-inner-gap,
+.preloader.color-soccerblue .preloader-inner-half-circle,
+.preloader.preloader-soccerblue .preloader-inner-half-circle {
+  border-color: #4d9cd0;
+}
+.theme-soccerblue a {
+  color: #4d9cd0;
+}
+.theme-soccerblue .navbar,
+.navbar.theme-soccerblue,
+.theme-soccerblue .toolbar,
+.toolbar.theme-soccerblue,
+.theme-soccerblue .subnavbar,
+.subnavbar.theme-soccerblue,
+.theme-soccerblue .searchbar,
+.searchbar.theme-soccerblue {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .range-slider input[type="range"]::-webkit-slider-thumb:before,
+.range-slider.theme-soccerblue input[type="range"]::-webkit-slider-thumb:before {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .range-slider input[type="range"]::-webkit-slider-thumb,
+.range-slider.theme-soccerblue input[type="range"]::-webkit-slider-thumb {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .range-slider input[type="range"]::-ms-thumb,
+.range-slider.theme-soccerblue input[type="range"]::-ms-thumb {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .range-slider input[type="range"]::-ms-fill-lower,
+.range-slider.theme-soccerblue input[type="range"]::-ms-fill-lower {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .range-slider input[type="range"]::-moz-range-thumb,
+.range-slider.theme-soccerblue input[type="range"]::-moz-range-thumb {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .label-switch input[type="checkbox"]:checked + .checkbox,
+.label-switch.theme-soccerblue input[type="checkbox"]:checked + .checkbox {
+  background-color: rgba(63, 81, 181, 0.5);
+}
+.theme-soccerblue .label-switch input[type="checkbox"]:checked + .checkbox:after,
+.label-switch.theme-soccerblue input[type="checkbox"]:checked + .checkbox:after {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue label.label-checkbox,
+label.label-checkbox.theme-soccerblue {
+  cursor: pointer;
+}
+.theme-soccerblue label.label-checkbox i.icon-form-checkbox:after,
+label.label-checkbox.theme-soccerblue i.icon-form-checkbox:after {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20fill%3D'%23ffffff'%20width%3D'24'%20height%3D'24'%20viewBox%3D'0%200%2024%2024'%3E%3Cpath%20d%3D'M9%2016.17L4.83%2012l-1.42%201.41L9%2019%2021%207l-1.41-1.41z'%2F%3E%3C%2Fsvg%3E");
+}
+.theme-soccerblue label.label-checkbox input[type="checkbox"]:checked + .item-media i.icon-form-checkbox,
+label.label-checkbox.theme-soccerblue input[type="checkbox"]:checked + .item-media i.icon-form-checkbox,
+.theme-soccerblue label.label-checkbox input[type="radio"]:checked + .item-media i.icon-form-checkbox,
+label.label-checkbox.theme-soccerblue input[type="radio"]:checked + .item-media i.icon-form-checkbox,
+.theme-soccerblue label.label-checkbox input[type="checkbox"]:checked ~ .item-after i.icon-form-checkbox,
+label.label-checkbox.theme-soccerblue input[type="checkbox"]:checked ~ .item-after i.icon-form-checkbox,
+.theme-soccerblue label.label-checkbox input[type="radio"]:checked ~ .item-after i.icon-form-checkbox,
+label.label-checkbox.theme-soccerblue input[type="radio"]:checked ~ .item-after i.icon-form-checkbox,
+.theme-soccerblue label.label-checkbox input[type="checkbox"]:checked ~ .item-inner i.icon-form-checkbox,
+label.label-checkbox.theme-soccerblue input[type="checkbox"]:checked ~ .item-inner i.icon-form-checkbox,
+.theme-soccerblue label.label-checkbox input[type="radio"]:checked ~ .item-inner i.icon-form-checkbox,
+label.label-checkbox.theme-soccerblue input[type="radio"]:checked ~ .item-inner i.icon-form-checkbox {
+  border-color: #4d9cd0;
+  background-color: #4d9cd0;
+}
+.theme-soccerblue label.label-radio i.icon-form-radio:after,
+label.label-radio.theme-soccerblue i.icon-form-radio:after {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue label.label-radio input[type="checkbox"]:checked + .item-media i.icon-form-radio,
+label.label-radio.theme-soccerblue input[type="checkbox"]:checked + .item-media i.icon-form-radio,
+.theme-soccerblue label.label-radio input[type="radio"]:checked + .item-media i.icon-form-radio,
+label.label-radio.theme-soccerblue input[type="radio"]:checked + .item-media i.icon-form-radio,
+.theme-soccerblue label.label-radio input[type="checkbox"]:checked ~ .item-after i.icon-form-radio,
+label.label-radio.theme-soccerblue input[type="checkbox"]:checked ~ .item-after i.icon-form-radio,
+.theme-soccerblue label.label-radio input[type="radio"]:checked ~ .item-after i.icon-form-radio,
+label.label-radio.theme-soccerblue input[type="radio"]:checked ~ .item-after i.icon-form-radio,
+.theme-soccerblue label.label-radio input[type="checkbox"]:checked ~ .item-inner i.icon-form-radio,
+label.label-radio.theme-soccerblue input[type="checkbox"]:checked ~ .item-inner i.icon-form-radio,
+.theme-soccerblue label.label-radio input[type="radio"]:checked ~ .item-inner i.icon-form-radio,
+label.label-radio.theme-soccerblue input[type="radio"]:checked ~ .item-inner i.icon-form-radio {
+  border-color: #4d9cd0;
+}
+.theme-soccerblue label.label-radio input[type="checkbox"]:checked + .item-media i.icon-form-radio:after,
+label.label-radio.theme-soccerblue input[type="checkbox"]:checked + .item-media i.icon-form-radio:after,
+.theme-soccerblue label.label-radio input[type="radio"]:checked + .item-media i.icon-form-radio:after,
+label.label-radio.theme-soccerblue input[type="radio"]:checked + .item-media i.icon-form-radio:after,
+.theme-soccerblue label.label-radio input[type="checkbox"]:checked ~ .item-after i.icon-form-radio:after,
+label.label-radio.theme-soccerblue input[type="checkbox"]:checked ~ .item-after i.icon-form-radio:after,
+.theme-soccerblue label.label-radio input[type="radio"]:checked ~ .item-after i.icon-form-radio:after,
+label.label-radio.theme-soccerblue input[type="radio"]:checked ~ .item-after i.icon-form-radio:after,
+.theme-soccerblue label.label-radio input[type="checkbox"]:checked ~ .item-inner i.icon-form-radio:after,
+label.label-radio.theme-soccerblue input[type="checkbox"]:checked ~ .item-inner i.icon-form-radio:after,
+.theme-soccerblue label.label-radio input[type="radio"]:checked ~ .item-inner i.icon-form-radio:after,
+label.label-radio.theme-soccerblue input[type="radio"]:checked ~ .item-inner i.icon-form-radio:after {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .focus-state .label,
+.theme-soccerblue .focus-state .floating-label {
+  color: #4d9cd0;
+}
+.theme-soccerblue .item-input-field.focus-state:after,
+.theme-soccerblue .input-field.focus-state:after,
+.theme-soccerblue .item-input-field.not-empty-state:after,
+.theme-soccerblue .input-field.not-empty-state:after {
+  background: #4d9cd0;
+}
+.theme-soccerblue .picker-calendar-day.picker-calendar-day-today span {
+  color: #4d9cd0;
+}
+.theme-soccerblue .picker-calendar-day.picker-calendar-day-selected span {
+  background-color: #4d9cd0;
+  color: #dbffff;
+}
+.theme-soccerblue .picker-calendar-day.picker-calendar-day-has-events span:after {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .picker-header {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .modal-button {
+  color: #4d9cd0;
+}
+.swiper-pagination.color-soccerblue .swiper-pagination-bullet-active,
+.theme-soccerblue .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #4d9cd0;
+}
+.swiper-button-next.color-soccerblue,
+.swiper-container-rtl .swiper-button-prev.color-soccerblue,
+.theme-soccerblue .swiper-button-next,
+.theme-soccerblue .swiper-container-rtl .swiper-button-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%233f51b5'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-button-prev.color-soccerblue,
+.swiper-container-rtl .swiper-button-next.color-soccerblue,
+.theme-soccerblue .swiper-button-prev,
+.theme-soccerblue .swiper-container-rtl .swiper-button-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%233f51b5'%2F%3E%3C%2Fsvg%3E");
+}
+.bg-soccerblue,
+a.bg-soccerblue,
+.list-block .swipeout-actions-left a.bg-soccerblue,
+.list-block .swipeout-actions-right a.bg-soccerblue {
+  background-color: #4d9cd0;
+}
+html:not(.watch-active-state) .list-block .bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-block a.bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-block .list-block .swipeout-actions-left a.bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-block .list-block .swipeout-actions-right a.bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-block.bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-blocka.bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-block.list-block .swipeout-actions-left a.bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-block.list-block .swipeout-actions-right a.bg-soccerblue .item-link:active,
+html:not(.watch-active-state) .list-block .item-link.bg-soccerblue:active,
+html:not(.watch-active-state) .list-block .item-linka.bg-soccerblue:active,
+html:not(.watch-active-state) .list-block .item-link.list-block .swipeout-actions-left a.bg-soccerblue:active,
+html:not(.watch-active-state) .list-block .item-link.list-block .swipeout-actions-right a.bg-soccerblue:active,
+.list-block .bg-soccerblue .item-link.active-state,
+.list-block a.bg-soccerblue .item-link.active-state,
+.list-block .list-block .swipeout-actions-left a.bg-soccerblue .item-link.active-state,
+.list-block .list-block .swipeout-actions-right a.bg-soccerblue .item-link.active-state,
+.list-block.bg-soccerblue .item-link.active-state,
+.list-blocka.bg-soccerblue .item-link.active-state,
+.list-block.list-block .swipeout-actions-left a.bg-soccerblue .item-link.active-state,
+.list-block.list-block .swipeout-actions-right a.bg-soccerblue .item-link.active-state,
+.list-block .item-link.bg-soccerblue.active-state,
+.list-block .item-linka.bg-soccerblue.active-state,
+.list-block .item-link.list-block .swipeout-actions-left a.bg-soccerblue.active-state,
+.list-block .item-link.list-block .swipeout-actions-right a.bg-soccerblue.active-state {
+  background: #303F9F;
+}
+.border-soccerblue {
+  border-color: #4d9cd0;
+}
+.list-block .border-soccerblue.item-inner:after,
+.list-block ul.border-soccerblue:after,
+.border-soccerblue:after,
+.list-block .border-soccerblue.item-inner:before,
+.list-block ul.border-soccerblue:before,
+.border-soccerblue:before {
+  background-color: #4d9cd0;
+}
+.theme-soccerblue .floating-button,
+.theme-soccerblue .speed-dial-buttons a,
+.floating-button.theme-soccerblue,
+.speed-dial-buttons a.theme-soccerblue,
+.floating-button.color-soccerblue,
+.speed-dial-buttons a.color-soccerblue {
+  color: #dbffff;
+  background: #4d9cd0;
+}
+html:not(.watch-active-state) .theme-soccerblue .floating-button:active,
+html:not(.watch-active-state) .theme-soccerblue .speed-dial-buttons a:active,
+html:not(.watch-active-state) .floating-button.theme-soccerblue:active,
+html:not(.watch-active-state) .speed-dial-buttons a.theme-soccerblue:active,
+html:not(.watch-active-state) .floating-button.color-soccerblue:active,
+html:not(.watch-active-state) .speed-dial-buttons a.color-soccerblue:active,
+.theme-soccerblue .floating-button.active-state,
+.theme-soccerblue .speed-dial-buttons a.active-state,
+.floating-button.theme-soccerblue.active-state,
+.speed-dial-buttons a.theme-soccerblue.active-state,
+.floating-button.color-soccerblue.active-state,
+.speed-dial-buttons a.color-soccerblue.active-state {
+  background: #303F9F;
+}
+.theme-soccerblue .floating-button i,
+.theme-soccerblue .speed-dial-buttons a i,
+.floating-button.theme-soccerblue i,
+.speed-dial-buttons a.theme-soccerblue i,
+.floating-button.color-soccerblue i,
+.speed-dial-buttons a.color-soccerblue i {
+  color: inherit;
+}
+.ripple-soccerblue .ripple-wave {
+  background-color: rgba(63, 81, 181, 0.3);
+}
+.badge.color-soccerblue,
+.badge.theme-soccerblue {
+  background-color: #4d9cd0;
+  color: #dbffff;
+}

@@ -1,0 +1,253 @@
+<div class="pages">
+    <!-- Page, data-page contains page name-->
+    <div data-page="favorites" class="page">
+        <!-- Top Navbar-->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left"><a href="#" class="link icon-only back"> <i class="icon icon-back"></i></a></div>
+                <div class="center sliding">Favorites</div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <!-- Scrollable page content-->
+        <div class="page-content" style="padding-top: 56px;">
+            <div class="list-block favorites-list">
+            </div>
+        </div>
+        <a href="#" class="floating-button open-popup color-pink">
+            <i class="icon icon-plus"></i>
+        </a>
+    </div>
+</div>
+
+
+<div class="page">
+<div data-page="calculator" class="page">
+    <div class="page-content">
+        <div class="card">
+                <div class="card-header">HANDICAP CALCULATOR</div>
+                 <div class="card-content">
+                   <div class="card-content-inner">
+                     <div>
+                     	<div id="ds-language">
+                        <span id="ds-l-eng" onclick="changeLang('eng')" title="English">
+                          <img src="img/flag_eng.jpg" alt="" id="ds-l-eng" onclick="changeLang('eng')" title="English" style="height:22px; padding-right: 15px;"/>
+                        </span>
+                        <span id="ds-l-eng" onclick="changeLang('ger')" title="Myanmar">
+                          <img src="img/flag_mm.jpg" alt="" id="ds-l-ger" onclick="changeLang('ger')" title="English" style="height:22px; padding-left: 2px;"/>
+                        </span>
+                     		<div id="ds-l-eng" onclick="changeLang('eng')" title="English"></div>
+                     		<div id="ds-l-ger" onclick="changeLang('ger')" title="German"></div>
+                     		<div id="ds-l-pol" onclick="changeLang('pol')" title="Polish"></div>
+                     		<div id="ds-l-rus" onclick="changeLang('rus')" title="Russian"></div>
+                     		<div id="ds-l-rom" onclick="changeLang('rom')" title="Romanian"></div>
+                     	</div>
+                     	<div id="ds-calculator" class="list-block">
+                            <div class="content-block-title" id="cell_your_selection">Your Selection</div>
+                            <div class="row">
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_home" id="bet_on_home_l">
+                                    <input type="radio" name="bet_on_selection" value="home" onchange="changeLabel('bet_on_selection_home')" id="bet_on_home" checked="checked">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                     <span class="item-inner item-title">Home</span>
+                                  </label>
+                                </div>
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_away" id="bet_on_away_l">
+                                    <input type="radio" name="bet_on_selection" value="away" onchange="changeLabel('bet_on_selection_away')" id="bet_on_away">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                      <span class="item-inner item-title">Away </span>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_over" id="bet_on_over_l">
+                                    <input type="radio" name="bet_on_selection" value="over" onchange="changeLabel('bet_on_selection_over')" id="bet_on_over">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                     <span class="item-inner item-title">Over</span>
+                                  </label>
+                                </div>
+                                <div>
+                                  <label class="label-radio item-content" for="bet_on_under" id="bet_on_under_l">
+                                    <input type="radio" name="bet_on_selection" value="under" onchange="changeLabel('bet_on_selection_under')" id="bet_on_under">
+                                     <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                      <span class="item-inner item-title">Under</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                        </div><br>
+                        <table id="ds-form-table" class="content-block-title"></div>
+                         <div class="list-block inputs-list">
+                           <ul name="calculator">
+                              <li>
+                                <div class="item-content">
+                                <div class="item-inner">
+                                  <div class="item-title label" id="cell_odds_format">Odd Format</div>
+                                  <div class="item-input id="cell_odds_format"">
+                                    <select name="select_format" onchange="showResult(this)" id="select_odds_format">
+                                      <option value="de" id="de_op">Decimal Odds</option>
+                                      <option value="ma" id="ma_op">Malay Odds</option>
+                                      <option value="ho" id="ho_op">Hong Kong Odds</option>
+                                      <option value="in" id="in_op">Indo Odds</option>
+                                      <option value="fr" id="fr_op">Fractional Odds</option>
+                                      <option value="am" id="am_op">American Odds</option>
+                                    </select>
+                                  </div>
+                                </div>
+                              </div>
+                              </li>
+                     					<li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                     						    <div  class="item-title label" id="cell_odds">Home Team Odds</div>
+                                    <div id="odds_error"></div>
+                                    <input type="text" id="odd_input" value="1.91">
+                                    </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div class="item-title label" id="cell_handicap">Home AH</div>
+                                    <div class="item-input" id="selection_cell">
+                                      <select id="select_handicap">
+                                          <option value="-4.00">-4.00</option>
+                                          option value="-3.75">-3.75 (-3.5, -4.0)</option>
+                                          <option value="-3.50">-3.50</option>
+                                          <option value="-3.25">-3.25 (-3.0, -3.5)</option>
+                                          <option value="-3.00">-3.00</option>
+                                          <option value="-2.75">-2.75 (-2.5, -3.0)</option>
+                                          <option value="-2.50">-2.50</option>
+                                          <option value="-2.25">-2.25 (-2.0, -2.5)</option>
+                                          <option value="-2.00">-2.00</option>
+                                          <option value="-1.75">-1.75 (-1.5, -2.0)</option>
+                                          <option value="-1.50">-1.50</option>
+                                          <option value="-1.25">-1.25 (-1.0, -1.5)</option>
+                                          <option value="-1.00">-1.00</option>
+                                          <option value="-0.75">-0.75 (-0.5, -1.0)</option>
+                                          <option value="-0.50">-0.50</option>
+                                          <option value="-0.25">-0.25 (0.0, -0.5)</option>
+                                          <option value="0.00" selected="selected">0.0 (Level)</option>
+                                          <option value="0.25">+0.25 (+0.0, +0.5)</option>
+                                          <option value="0.50">+0.50</option>
+                                          <option value="0.75">+0.75 (+0.5, +1.0)</option>
+                                          <option value="1.00">+1.00</option>
+                                          <option value="1.25">+1.25 (+1.0, +1.5)</option>
+                                          <option value="1.50">+1.50</option>
+                                          <option value="1.75">+1.75 (+1.5, +2.0)</option>
+                                          <option value="2.00">+2.00</option>
+                                          <option value="2.25">+2.25 (+2.0, +2.5)</option>
+                                          <option value="2.50">+2.50</option>
+                                          <option value="2.75">+2.75 (+2.5, +3.0)</option>
+                                          <option value="3.00">+3.00</option>
+                                          <option value="3.25">+3.25 (+3.0, +3.5)</option>
+                                          <option value="3.50">+3.50</option>
+                                          <option value="3.75">+3.75 (+3.5, +4.0)</option>
+                                          <option value="4.00">+4.00</option>
+                                        </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="item-content">
+                                  <div class="item-inner">
+                                    <div id="stake_error"></div>
+                                    <div class="item-title label" id="stake_cell">Stake</div>
+                                    <div class="item-input">
+                                      <input type="text" name="stake" id="stake" value="100">
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                            <div class="content-block-title" id="calculation_cell">Calculation Options</div>
+                               <div class="row">
+                                 <div>
+                                   <label class="label-radio item-content" for="final_score_check" id="final_score_check_l">
+                                     <input type="radio" name="calculation" checked="checked" onchange="changeLabel('score')" id="final_score_check">
+                                      <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                      <span class="item-inner item-title">Score</span>
+                                   </label>
+                                 </div>
+                                 <div>
+                                   <label class="label-radio item-content" for="final_all_check" id="final_all_check_l">
+                                     <input type="radio" name="calculation" onchange="changeLabel('all')" id="final_all_check">
+                                      <span class="item-media"><i class="icon icon-form-radio"></i></span>
+                                       <span class="item-inner item-title">All Result</span>
+                                   </label>
+                                 </div>
+                               </div>
+                             </div>
+                             <div>
+                               <div class="list-block inset inputs-list" >
+                               <div class="row" id="final_score_row">
+                                 <h5 id="specific_cell">SCORE</h5>
+                                 <div class="item-content">
+                                   <div class="item-inner" >
+                                     <div class="item-title label" id="score-home">Home</div>
+                                     <div class="item-input ds-select small">
+                                       <select id="select_home">
+                                       <option selected="selected">0</option>
+                                       <option>1</option>
+                                       <option>2</option>
+                                       <option>3</option>
+                                       <option>4</option>
+                                       <option>5</option>
+                                       <option>6</option>
+                                       <option>7</option>
+                                       <option>8</option>
+                                       <option>9</option>
+                                     </select>
+                                   </div>
+                                 </div>
+                               </div>
+                               <div class="item-content">
+                                 <div class="item-inner">
+                                   <div class="item-title label" id="score-away">away</div>
+                                   <div class="item-input ds-select small">
+                                     <select id="select_away">
+                                       <option selected="selected">0</option>
+                                       <option>1</option>
+                                       <option>2</option>
+                                       <option>3</option>
+                                       <option>4</option>
+                                       <option>5</option>
+                                       <option>6</option>
+                                       <option>7</option>
+                                       <option>8</option>
+                                       <option>9</option>
+                                     </select>
+                                   </div>
+                                 </div>
+                               </div>
+
+                     			</table>
+                          <p id="buttons" class="buttons-row">
+                             <a type="button" onclick="calculate()" id="btn_calculate" class="button button-fill button-raised">Calculate</a>
+                             <a type="button" onclick="reset_form()" id="btn_reset" class="button button-raised">RESET</a>
+                          </p>
+                          <p>
+
+
+                          </p>
+
+
+                     			<div class="clear"></div>
+                            <div class="item-divider"></div>
+                     			<div id="result"></div>
+
+                          </div>
+
+                     	</div>
+                     </div>
+                     <div class="clear"></div>
+                   </div>
+                 </div>
+</div>
+    </div>
+    
+</div>
+<script src="js/msport.js"></script>

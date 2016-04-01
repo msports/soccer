@@ -1,0 +1,332 @@
+<div class="page">
+            <!-- Your main view, should have "view-main" class -->
+            <div class="view view-main">
+                <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+                <div class="pages navbar-fixed toolbar-fixed">
+                    <!-- Page, "data-page" contains page name -->
+                    <div data-page="spain" class="page">
+                        <!-- Top Navbar. In Material theme it should be inside of the page-->
+                        <div class="navbar color-lightblue">
+                            <div class="navbar-inner">
+                                <div class="left"><a href="#" class="link open-panel icon-only"><i class="icon icon-bars"></i></a></div>
+                                <div class="center">spain laliga</div>
+                                </div>
+                            </div>
+                        <!--Tab bar-->
+                        <div class="toolbar tabbar color-lightblue">
+                            <div class="toolbar-inner">
+                                <a href="#spaintab1" class="active tab-link matches">MATCHES</a>
+                                <a href="#spaintab2" class="tab-link table">TABLE</a>
+                            </div>
+                        </div>
+                        <div class="tabs-swipeable-wrap">
+                            <div class="tabs">
+                                <div id="spaintab1" class="page-content tab active pull-to-refresh-content">
+                                    <!--Pull to refresh pre-loader-->
+                                    <div class="pull-to-refresh-layer">
+                                        <div class="preloader"></div>
+                                        <div class="pull-to-refresh-arrow"></div>
+                                    </div>
+                                    <!--Ajax pre-loader-->
+                                    <div class="preloader"></div>
+                                    <!--Fixtures list-->
+                                    <div class="list-block" id="fixtures-listing" style="margin-top: 0; font-size: 14px;">
+                                    </div>   
+                                </div>
+                                <div id="tab2" class="page-content tab pull-to-refresh-content">
+                                    <!--Pull to refresh pre-loader-->
+                                    <div class="pull-to-refresh-layer">
+                                        <div class="preloader"></div>
+                                        <div class="pull-to-refresh-arrow"></div>
+                                    </div>
+                                    <!--Ajax pre-loader-->
+                                    <div class="preloader"></div>
+                                    <div class="content-block" id="standing-table">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Search favorite teams popup-->
+        <div class="popup">
+            <div class="view">
+                <div class="pages">
+                    <div class="page navbar-fixed">
+                        <div class="navbar">
+                            <div class="navbar-inner">
+                                <div class="left"><a href="" class="link icon-only close-popup"><i class="icon icon-back"></i></a></div>
+                                <form class="searchbar">
+                                    <div class="searchbar-input">
+                                        <input type="search" placeholder="Search" class="fav-search"><a href="#" class="searchbar-clear"></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="page-content">
+                            <div class="list-block media-list list-block-search">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script id="fixtures-template" type="text/template">
+            {{#each this}}
+            <div class="list-group">
+            <ul>
+            <li class="list-group-title">Match day {{@key}}</li>
+            {{#each this}}
+            <li class="item-content fixture-list ripple" fixture-link="{{_links.self.href}}">
+            <div class="item-inner">
+            <div class="item-title">
+            <table class="fixture-listing-table">
+            <tr>
+            <td class="fixture-team-logo">{{#js_compare "teamLogo(this.homeTeamName) !== undefined"}}<img src="{{teamLogo homeTeamName}}" class="club-logo"/>{{else}}<i class="fa fa-shield tm-missing-icon"></i>{{/js_compare}}</td>
+            <td class="fixture-team-name"><span>{{js "this.homeTeamName.replace(/AFC|FC/g,'')"}}</span></td>
+            <td class="fixture-team-score">{{js "cleanResult(this.result.goalsHomeTeam)"}}</td>
+            <td rowspan="2" class="fixture-date">{{js "myApp.shorttenStatus(this.status)"}} {{#js_compare "myApp.shorttenStatus(this.status) === ''"}} {{js "localTime(this.date)"}} {{else}} {{/js_compare}}<br/>{{js "dateFormat(this.date)"}}</td>
+            </tr>
+            <tr>
+            <td class="fixture-team-logo">{{#js_compare "teamLogo(this.awayTeamName) !== undefined"}}<img src="{{teamLogo awayTeamName}}" class="club-logo"/>{{else}}<i class="fa fa-shield tm-missing-icon"></i>{{/js_compare}}</td>
+            <td class="fixture-team-name"><span>{{js "this.awayTeamName.replace(/AFC|FC/g,'')"}}</span></td>
+            <td class="fixture-team-score">{{js "cleanResult(this.result.goalsAwayTeam)"}}</td>
+            </tr>
+            </table>
+            </div>
+            </div>
+            </li>
+            {{/each}}
+            </ul>
+            </div>
+            </ul>
+            </div>
+            {{/each}}
+        </script>
+        <script id="standings-template" type="text/template">
+            <table class="league-table">
+            <tr><th colspan="4" class="club-title">Team</th><th>MP</th><th>GF</th><th>GA</th><th>Pts</th></tr>
+            {{#each standing}}
+            <tr {{highlight this.teamName ../team}}>
+            <td class="td-rank">{{position}}</td>
+            <td class="td-club-logo"><img src="{{teamLogo teamName}}" class="club-logo" height="25"/></td>
+            <td class="td-club-title">{{js "this.teamName.replace(/AFC|FC/g,'')"}}</td>
+            <td class="td-club-title"></td>
+            <td class="td-score">{{playedGames}}</td>
+            <td class="td-score">{{goals}}</td>
+            <td class="td-score">{{goalsAgainst}}</td>
+            <td class="td-score">{{points}}</td>
+            </tr>
+            {{/each}}
+            </table>
+        </script>
+        <script id="fixture-vrt-detail-template" type="text/template">
+            <div class="pages navbar-fixed">
+            <div data-page="vrt-match-details" class="page">
+            <div class="navbar color-mint">
+            <div class="navbar-inner">
+            <div class="left"><a href="index.html" class="link back icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center"></div>
+            </div>
+            </div>
+            <div class="page-content">
+            <div class="content-block">
+            <div class="preloader vtr-preloader"></div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </script>
+        <script id="fixture-detail-template" type="text/template">
+            <div class="pages navbar-fixed">
+            <div data-page="match-details" class="page">
+            <div class="navbar color-mint big-subnavbar-container">
+            <div class="navbar-inner">
+            <div class="left"><a href="index.html" class="link back icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center">{{js "this.fixture.homeTeamName.replace(/AFC|FC/g, '')"}} vs {{js "this.fixture.awayTeamName.replace(/AFC|FC/g, '')"}} </div>
+            <div class="right"><a href="whatsapp://send?text={{js "this.fixture.homeTeamName.replace(/AFC|FC/g, '')"}} {{fixture.result.goalsHomeTeam}} - {{fixture.result.goalsAwayTeam}} {{js "this.fixture.awayTeamName.replace(/AFC|FC/g, '')"}} Shared from soccer app." class="link icon-only external" target="_blank" id="watsapp-share-scores"><i class="mi">share</i></a></div>
+            </div>
+            <div class="big-subnavbar color-mint">
+            <table>
+            <tr>
+            <td class="match-tm-logo">{{#js_compare "teamLogo(this.fixture.homeTeamName) !== undefined"}}<img src="{{teamLogo fixture.homeTeamName}}" height="48"/>{{else}}<i class="fa fa-shield tm-missing-icon-large"></i>{{/js_compare}}</td>
+            <td class="match-sc-home">{{fixture.result.goalsHomeTeam}}</td>
+            <td class="match-sc-dash">{{fixture.matchTime}}</td>
+            <td class="match-sc-away">{{fixture.result.goalsAwayTeam}}</td>
+            <td class="match-tm-logo">{{#js_compare "teamLogo(this.fixture.awayTeamName) !== undefined"}}<img src="{{teamLogo fixture.awayTeamName}}" height="48"/>{{else}}<i class="fa fa-shield tm-missing-icon-large"></i>{{/js_compare}}</td>
+            </tr>
+            <tr>
+            <td class="match-tm-name home">{{js "this.fixture.homeTeamName.replace(/AFC|FC/g, '')"}}</td>
+            <td class="match-status" colspan="3">{{fixture.status}}</td>
+            <td class="match-tm-name away">{{js "this.fixture.awayTeamName.replace(/AFC|FC/g, '')"}}</td>
+            </tr>
+            </table>
+            <div class="toolbar tabbar color-mint" style="top: 0">
+            <div class="toolbar-inner">
+            <a href="#stats" class="active tab-link stats">STATS</a>
+            <a href="#head2head" class="tab-link">HEAD TO HEAD</a>
+            <span class="tab-link-highlight" style="width: 50%; transform: translate3d(0%, 0px, 0px);"></span>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="page-content" style="padding-top: 125px; background: #f4f4f4;">
+            <div class="tabs">
+            <div id="stats" class="tab active">
+            <div class="page-content no-stats">
+            <i class="mi">equalizer</i><p>No match statistics for now!</p>
+            </div>
+            </div>
+            <div id="head2head" class="tab" style="background: #f4f4f4;">
+            <div class="page-content">
+            <div class="card">
+            <div class="card-content">
+            <div class="card-content-inner">
+            <div class="row no-gutter head-times">
+            <div class="col-25"><div class="head-stat">{{head2head.homeTeamWins}}</div><div class="stat-legend color-gray">Wins</div></div>
+            <div class="col-25"><div class="head-stat">{{head2head.draws}}</div><div class="stat-legend color-gray">Draws</div></div>
+            <div class="col-25"><div class="head-stat">{{head2head.count}}</div><div class="stat-legend color-gray">Games</div></div>
+            <div class="col-25"><div class="head-stat">{{head2head.awayTeamWins}}</div><div class="stat-legend color-gray">Wins</div></div>
+            </div> 
+            </div>
+            </div>
+            </div>
+            <div class="list-block" style="margin-top: 15px; margin-left: 8px; margin-right: 8px;">
+            <table class="head2head">
+            {{#each head2head.fixtures}}
+            <tr class="item-divider" style="line-height: 0"><td colspan="5">{{@key}}</td></tr>
+            {{#each this}}
+            <tr>
+            <td class="head-team" align="right" style="padding-left: 10px;">{{js "this.homeTeamName.replace(/AFC|FC/g,'')"}}</td>
+            <td class="head-logo">{{#js_compare "teamLogo(this.homeTeamName) !== undefined"}}<img src="{{teamLogo homeTeamName}}" height="25"/>{{else}}<i class="fa fa-shield h2h-missing-icon"></i>{{/js_compare}}</td>
+            <td class="head-score">{{result.goalsHomeTeam}} - {{result.goalsAwayTeam}}<br/><span class="head-date color-gray">{{js "getDateStr(this.date)"}}</span></td>
+            <td class="head-logo">{{#js_compare "teamLogo(this.awayTeamName) !== undefined"}}<img src="{{teamLogo awayTeamName}}" height="25"/>{{else}}<i class="fa fa-shield h2h-missing-icon"></i>{{/js_compare}}</td>
+            <td class="head-team" style="padding-right: 10px;">{{js "this.awayTeamName.replace(/AFC|FC/g,'')"}}</td>
+            </tr>
+            {{/each}}
+            {{/each}}
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </script>
+        <script id="favorites-listing-template" type="text/template">
+            <ul>
+            {{#each this}}
+            <li class="swipeout">
+            <div class="swipeout-content item-content" id="favorite-list" teamcode="{{code}}" teamname="{{name}}" team-href="{{href}}">
+            <div class="item-media"><img src="{{teamLogo name}}" height="30px" /></i></div>
+            <div class="item-inner">
+            <div class="item-title">{{name}}</div>
+            </div>
+            </div>
+            <div class="swipeout-actions-right">
+            <a href="#" class="swipeout-delete delete-favorite"><i class="mi">delete</i></a>
+            </div>
+            </li>
+            {{/each}}
+            </ul>
+        </script>
+        <script id="teams-listing-template" type="text/template">
+            <ul>
+            {{#each teams}}
+            <li>
+            <label class="label-checkbox item-content">
+            <input type="checkbox" name="teams-checkbox" value="{{code}}" teamname="{{name}}" tem-href="{{_links.self.href}}" />
+            <div class="item-media"><img src="{{teamLogo name}}" height="30px" /></div>
+            <div class="item-inner">
+            <div class="item-title">{{name}}</div>
+            </div>
+            <div class="item-after"><i class="icon-form-checkbox"></i></div>
+            </label>
+            </li>
+            {{/each}}
+            </ul>
+        </script>
+        <script id="team-template" type="text/template">
+            <div class="pages navbar-fixed">
+            <div data-page="team-detail" class="page">
+            <div class="navbar big-subnavbar-container" style="background-color: {{color}}; color: #fff;">
+            <div class="navbar-inner">
+            <div class="left"><a href="" class="link back icon-only"><i class="icon icon-back"></i></a></div>
+            <div class="center">Team</div>
+            <div class="right">
+            <a href="#" class="link icon-only"><i class="mi fav">&#xe87d;</i></a>
+            </div>
+            </div>
+            <div class="big-subnavbar" style="background-color: {{color}}; color: #fff;">
+            <table>
+            <tr>
+            <td class="tm-logo"><img src="{{teamLogo name}}" height="48"/></td>
+            <td class="tm-name" id="team-href" team-href="{{href}}" team-code="{{code}}">{{name}}</td>
+            </tr>
+            </table>
+
+            <div class="toolbar tabbar" style="top: 0; background-color: {{color}}; color: #fff;">
+            <div class="toolbar-inner">
+            <a href="#fixtures" class="active tab-link fixtures">FIXTURES</a>
+            <a href="#players" class="tab-link players">PLAYERS</a>
+            <a href="#team-table" class="tab-link table">TABLE</a>
+            <span class="tab-link-highlight" style="width: 50%; transform: translate3d(0%, 0px, 0px);"></span>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="page-content" style="padding-top: 155px;">
+            <div class="tabs-swipeable-wrap">
+            <div class="tabs">
+            <div id="fixtures" class="tab active">
+            <div class="preloader vtr-preloader"></div>
+            <div class="list-block page-content" id="tm-fixture" style="margin-top: 0px; padding-top: 12px; font-size: 14px;">
+
+            </div>
+            </div>
+            <div id="players" class="tab bg-lightgray">
+            <div class="preloader vtr-preloader"></div>
+            <div class="page-content" id="player-list" style="padding-top: 20px; font-size: 14px;">
+
+            </div>
+            </div>
+            <div id="team-table" class="tab">
+            <div class="preloader vtr-preloader"></div>
+            <div class="page-content" id="standing-table-team" style="padding: 40px 16px;">
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+        </script>
+        <script id="player-template" type="text/template">
+            {{#each this}}
+            <div class="card">
+            <div class="card-header color-gray">{{@key}}</div>
+            <div class="card-content">
+            <div class="card-content-inner">
+            <div class="list-block media-list">
+            <ul>
+            {{#each this}}
+            <li class="item-content">
+            <div class="item-media" style="box-sizing: content-box;"><div class="small-player-pic"><img src="img/players/epl/{{js "this.name.replace(/ /g, '')"}}.png" onerror="this.src='img/players/epl/default-player.png'" /></div></div>
+            <div class="item-inner">
+            <div class="item-title-row">
+            <div class="item-title">{{name}}</div>
+            </div>
+            <div class="item-subtitle player-country" style="display: flex;"><img src="img/flags/{{js "this.nationality.replace(/,/g, '').replace(/ /g, '-')"}}.png" onerror="this.src='img/flags/default-flag.png'" style="height: 20px;"/>{{nationality}}</div>
+            </div>
+            </li>
+            {{/each}}
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div> 
+            {{/each}}
+        </script>

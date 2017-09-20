@@ -324,7 +324,7 @@ myApp.fixturesList = function (token) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/soccerseasons/402/fixtures?timeFrameStart=' + startDate + '&timeFrameEnd=' + endDate,
+        url: 'http://football-data.org/v1/competitions/445/fixtures?timeFrameStart=' + startDate + '&timeFrameEnd=' + endDate,
         dataType: 'json',
         type: 'GET',
         beforeSend: function (xhr) {

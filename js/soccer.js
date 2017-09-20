@@ -311,7 +311,7 @@ myApp.fixturesList = function (token) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/soccerseasons/398/fixtures?timeFrameStart=' + startDate + '&timeFrameEnd=' + endDate,
+        url: 'http://football-data.org/v1/competitions/445/fixtures?timeFrameStart=' + startDate + '&timeFrameEnd=' + endDate,
         dataType: 'json',
         type: 'GET',
         beforeSend: function (xhr) {
@@ -341,7 +341,7 @@ myApp.standingsTable = function (token) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/soccerseasons/398/leagueTable',
+        url: 'http://football-data.org/v1/competitions/445/leagueTable',
         dataType: 'json',
         type: 'GET',
         beforeSend: function (xhr) {
@@ -394,7 +394,7 @@ myApp.updateTeams = function (token) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/soccerseasons/398/teams',
+        url: 'http://football-data.org/v1/competitions/445/teams',
         dataType: 'json',
         type: 'GET',
         success: function (data, status, xhr) {

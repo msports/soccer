@@ -221,7 +221,7 @@ myApp.onPageInit('team-detail', function () {
             headers: {
                 'X-Auth-Token': token
             },
-            url: 'http://api.football-data.org/v1/teams/' + teamId + '/players',
+            url: 'https://api.football-data.org/v1/teams/' + teamId + '/players',
             dataType: 'json',
             success: function (data) {
                 var grouped = _.groupBy(data.players, 'position');
@@ -238,7 +238,7 @@ myApp.loadTeamFixtures = function (teamId) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/teams/' + teamId + '/fixtures',
+        url: 'https://api.football-data.org/v1/teams/' + teamId + '/fixtures',
         dataType: 'json',
         success: function (data) {
             var grouped = _.groupBy(data.fixtures, 'matchday');
@@ -311,7 +311,7 @@ myApp.fixturesList = function (token) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/soccerseasons/398/fixtures?timeFrameStart=' + startDate + '&timeFrameEnd=' + endDate,
+        url: 'https://api.football-data.org/v1/soccerseasons/398/fixtures?timeFrameStart=' + startDate + '&timeFrameEnd=' + endDate,
         dataType: 'json',
         type: 'GET',
         beforeSend: function (xhr) {
@@ -341,7 +341,7 @@ myApp.standingsTable = function (token) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/soccerseasons/398/leagueTable',
+        url: 'https://api.football-data.org/v1/soccerseasons/398/leagueTable',
         dataType: 'json',
         type: 'GET',
         beforeSend: function (xhr) {
@@ -394,7 +394,7 @@ myApp.updateTeams = function (token) {
         headers: {
             'X-Auth-Token': token
         },
-        url: 'http://api.football-data.org/v1/soccerseasons/398/teams',
+        url: 'https://api.football-data.org/v1/soccerseasons/398/teams',
         dataType: 'json',
         type: 'GET',
         success: function (data, status, xhr) {
